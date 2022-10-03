@@ -1,4 +1,6 @@
 #include <iostream>
+#include "../demo/triangle.hpp"
+#include "../header/rectangle.hpp"
 using namespace std;
 
 int main() {
@@ -7,6 +9,7 @@ int main() {
     cin >> inputType;
 
     if (inputType == "Triangle") {
+    Triangle tri1;
     cout << "Please input base..." << endl;
     int base;
     cin >> base;
@@ -19,11 +22,12 @@ int main() {
 	    cout << "Please try again!" << endl;
 	    cin >> base;
     }
-    cout << "Struct type: Triangle. Area: " << 0.866 * base << endl;
+    tri1.set_base(base);
+    cout << "Struct type: Triangle. Area: " << tri1.area()  << endl;
     }
-}
 
 else if (inputType == "Rectangle") {
+    Rectangle rec1;
     cout << "Please input width..." << endl;
     int width;
     cin >> width;
@@ -36,6 +40,7 @@ else if (inputType == "Rectangle") {
 	cout << "please try again!" << endl;
 	cin >> width;
     }
+    rec1.set_width(width);
     cout << "Please input height..." << endl;
     int height;
     cin >> height;
@@ -48,10 +53,15 @@ else if (inputType == "Rectangle") {
 	    cout << "Please try again!" << endl;
 	    cin >> height;
     } 
+    rec1.set_height(height);
     cout << "Struct type: Rectangle. Area: " << width * height << endl;
 }
+
 else {
 cout << "you have input the wrong data type!" << endl;
 }
 
 cout << "Program end." << endl;
+
+return 0;
+}
